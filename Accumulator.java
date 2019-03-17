@@ -139,8 +139,17 @@ public class Accumulator {
       @return a list of each of the Double elements
       from the \list whose value is "finite".
      */
-    // public static List_inArraySlots finites(
-        // List_inArraySlots list
-      // ) {
-    // }
+    public static List_inArraySlots finites(
+        List_inArraySlots list
+      ) {
+
+          List_inArraySlots doublesOnly = new List_inArraySlots();
+
+          for (int index = 0; index < list.size(); index++)
+          if (  list.get(index) instanceof Double  ) {
+              if (  ((Double)list.get(index)).isInfinite() == false)
+                doublesOnly.add( list.get(index) );
+          }
+          return doublesOnly;
+      }
 }
